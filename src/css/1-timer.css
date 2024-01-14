@@ -1,0 +1,84 @@
+.datetime-input {
+  width: 280px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+  color: #2e2f42;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  outline: none;
+}
+
+.datetime-input:hover {
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.datetime-input:focus {
+  border-radius: 5px;
+  border: 1px solid #4e75ff;
+}
+
+.start-btn {
+  width: 75px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #0037fe;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0;
+}
+
+.start-btn:hover,
+.start-btn:focus {
+  background-color: #0037ff;
+}
+
+.start-btn.disabled {
+  color: #ffffff;
+  background-color: #b2b2b2;
+  cursor: not-allowed;
+}
+
+.timer {
+  display: flex;
+  width: 390px;
+  height: 70px;
+  gap: 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.value {
+  color: #000000;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.label {
+  color: #2e2f42;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.flatpickr-calendar.open {
+  background-color: #ffffff;
+}
+
+.error-svg {
+  background-image: url(../img/error.svg);
+}

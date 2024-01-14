@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Task-2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/2-snackbar.css" />
   </head>
 
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <form class="form">
+    <form class="form-snack">
       <label>
         Delay (ms)
         <input class="delay-input" type="number" name="delay" required />
@@ -24,9 +24,10 @@
 
       <fieldset class="fieldset-wrap">
         <legend>State</legend>
-        <label>
+
+        <label class="label-radio">
           <input
-            class="visually-hidden"
+            class="input-snack"
             type="radio"
             name="state"
             value="fulfilled"
@@ -35,9 +36,9 @@
           <span class="radio-btn"></span>
           Fulfilled
         </label>
-        <label>
+        <label class="label-radio">
           <input
-            class="visually-hidden"
+            class="input-snack"
             type="radio"
             name="state"
             value="rejected"
