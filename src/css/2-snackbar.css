@@ -55,5 +55,8 @@
 }
 
 .access-svg {
-  background-image: url(../img/ok.svg);
+  background-image: url(../img/access.svg);
+}
+.error-svg {
+  background-image: url(../img/error.svg);
 }

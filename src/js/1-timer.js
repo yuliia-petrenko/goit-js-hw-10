@@ -6,14 +6,14 @@ import 'izitoast/dist/css/iziToast.min.css';
 let userSelectedDate;
 
 const inputDate = document.querySelector('.datetime-input');
-const statDate = document.querySelector('button[data-start');
+const startButton = document.querySelector('button[data-start');
 const dayDate = document.querySelector('span[data-days]');
 const hourDate = document.querySelector('span[data-hours]');
 const minuteDate = document.querySelector('span[data-minutes]');
 const secondDate = document.querySelector('span[data-seconds]');
 
 inputDate.disabled = false;
-statDate.disabled = true;
+startButton.disabled = true;
 
 const options = {
   enableTime: true,
@@ -24,8 +24,8 @@ const options = {
     if (selectedDates[0].getTime() > Date.now()) {
       userSelectedDate = selectedDates[0].getTime();
 
-      statDate.disabled = false;
-      statDate.classList.remove('disabled');
+      startButton.disabled = false;
+      startButton.classList.remove('disabled');
     } else {
       iziToast.show({
         message: 'Please choose a date in the future!',
@@ -38,32 +38,19 @@ const options = {
         icon: 'error-svg',
       });
 
-      statDate.classList.add('disabled');
+      startButton.classList.add('disabled');
     }
   },
 };
-function convertMs(ms) {
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
-  const days = Math.floor(ms / day);
-  const hours = Math.floor((ms % day) / hour);
-  const minutes = Math.floor(((ms % day) % hour) / minute);
-  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
-
-  return { days, hours, minutes, seconds };
-}
 
 flatpickr('#datetime-picker', options);
 
 function addLeadingZero(value) {
-  value = String(value);
-  return value.length < 2 ? value.padStart(2, '0') : value;
+  return String(value).padStart(2, '0');
 }
 
-statDate.addEventListener('click', event => {
-  statDate.classList.add('disabled');
+startButton.addEventListener('click', () => {
+  startButton.classList.add('disabled');
 
   const timer = setInterval(() => {
     const diffDate = userSelectedDate - Date.now();
@@ -78,3 +65,15 @@ statDate.addEventListener('click', event => {
     }
   }, 1000);
 });
+function convertMs(ms) {
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+  const days = Math.floor(ms / day);
+  const hours = Math.floor((ms % day) / hour);
+  const minutes = Math.floor(((ms % day) % hour) / minute);
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+
+  return { days, hours, minutes, seconds };
+}

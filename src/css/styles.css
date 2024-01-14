@@ -30,3 +30,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   padding: 35px;
 }
+.access-svg {
+  background-image: url(../img/access.svg);
+}
+.error-svg {
+  background-image: url(../img/error.svg);
+}
